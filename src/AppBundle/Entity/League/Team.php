@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Entity\Team;
+namespace AppBundle\Entity\League;
 
 use AppBundle\Entity\AbstractEntity;
 use Doctrine\ORM\Mapping as ORM;
@@ -8,7 +8,7 @@ use JMS\Serializer\Annotation as Serializer;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * AppBundle\Entity\Team
+ * AppBundle\Entity\League
  *
  * @ORM\Table(name="cp_team")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\TeamRepository")
@@ -32,11 +32,72 @@ class Team extends AbstractEntity
      * @var \AppBundle\Entity\League\League
      *
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\League\League", inversedBy="teams", fetch="EXTRA_LAZY")
-     * @ORM\JoinColumn(name="leaque", referencedColumnName="id")
+     * @ORM\JoinColumn(name="league", referencedColumnName="id")
      *
      * @Serializer\SerializedName("league")
      * @Serializer\Type("AppBundle\Entity\League\League")
      * @Serializer\Expose
      */
-    protected $leaque;
+    protected $league;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="strip", type="string", length=255, nullable=true)
+     *
+     * @Serializer\SerializedName("strip")
+     * @Serializer\Type("string")
+     * @Serializer\Expose
+     */
+    protected $strip;
+
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param string $name
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+    /**
+     * @return League
+     */
+    public function getLeague()
+    {
+        return $this->league;
+    }
+
+    /**
+     * @param League $league
+     */
+    public function setLeague($league)
+    {
+        $this->league = $league;
+    }
+
+    /**
+     * @return string
+     */
+    public function getStrip()
+    {
+        return $this->strip;
+    }
+
+    /**
+     * @param string $strip
+     */
+    public function setStrip($strip)
+    {
+        $this->strip = $strip;
+    }
+
+
 }

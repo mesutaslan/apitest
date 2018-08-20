@@ -29,13 +29,45 @@ class League extends AbstractEntity
     protected $name;
 
     /**
-     * @var ArrayCollection<\AppBundle\Entity\Team\Team>
+     * @var ArrayCollection<\AppBundle\Entity\League\Team>
      *
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Team\Team", mappedBy="league", fetch="EXTRA_LAZY")
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\League\Team", mappedBy="league", fetch="EXTRA_LAZY")
      *
      * @Serializer\SerializedName("teams")
-     * @Serializer\Type("ArrayCollection<AppBundle\Entity\Team\Team>")
+     * @Serializer\Type("ArrayCollection<AppBundle\Entity\League\Team>")
      * @Serializer\Expose
      */
     protected $teams;
+
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param string $name
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getTeams()
+    {
+        return $this->teams;
+    }
+
+    /**
+     * @param ArrayCollection $teams
+     */
+    public function setTeams($teams)
+    {
+        $this->teams = $teams;
+    }
 }
