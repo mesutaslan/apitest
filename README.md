@@ -13,7 +13,7 @@ $ docker-compose up -d
 ## Usage
 
 ```php
-import foobar
+Endpoints
 
   app_league_listteams       GET      ANY      ANY    /api/leagues/{id}/teams
   app_league_deleteleague    DELETE   ANY      ANY    /api/leagues/{id}
