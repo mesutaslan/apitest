@@ -3,3 +3,25 @@ app:
     type: annotation
     defaults:
         _format: json
+
+register:
+    path: /register
+    controller: AppBundle\Controller\AuthController::register
+    methods: POST
+
+api:
+    path: /api
+    controller: AppBundle\Controller\AuthController::api
+
+login_check:
+    path:     /auth/login_check
+    methods:  [POST]
+
+login:
+    path:     /auth/login
+    methods:  [POST]
+
+token:
+    path:     /create-token
+    controller: AppBundle\Controller\AuthController::createToken
+    methods:  [POST]

@@ -49,3 +49,6 @@ services:
         class: AppBundle\Listener\ResponseListener
         tags:
         - { name: kernel.event_listener, event: kernel.response, method: onKernelResponse }
+
+    app.jwt_token_authenticator:
+        class: App\Security\Guard\JWTTokenAuthenticator

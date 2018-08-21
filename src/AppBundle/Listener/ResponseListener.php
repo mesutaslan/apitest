@@ -29,6 +29,10 @@ class ResponseListener
         if (in_array($response->getStatusCode(), [404,409])) {
             $content = json_encode(new ApiResponse(null, new Error($response->getStatusCode(), $response->getContent())));
         }
+
+        if (in_array($response->getStatusCode(), [201])) {
+            $content = json_encode(new ApiResponse($response->getContent(), null));
+        }
         $response->setContent($content);
         $event->setResponse($response);
     }
