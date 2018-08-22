@@ -20,7 +20,7 @@ class AuthService extends AbstractService implements AuthServiceInterface
         /** @var $user \AppBundle\Entity\User */
         $user = $this->getEntityManager()->getRepository(User::class)->findBy(['username'=>$username]);
         if (count($user) > 0) {
-            return $this->serviceResponse(sprintf('%s is alredy exist', $username), 409);
+            return $this->serviceResponse(sprintf('%s is already exist', $username), 409);
         } else {
             /** @var $user \AppBundle\Entity\User */
             $user = new User($username);
