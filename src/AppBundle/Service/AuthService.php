@@ -47,9 +47,9 @@ class AuthService extends AbstractService implements AuthServiceInterface
         $user = $this->getEntityManager()->getRepository(User::class)->findBy(['username'=>$username]);
         if (count($user) > 0) {
             $token = $tokenManager->create($user[0]);
-            return new Response(json_encode(['token' => $token]));
+            return $this->serviceResponse($this->serialize(['token' => $token]), 200);
         } else {
-            return new Response(json_encode(['message' => 'Token not created!']));
+            return $this->serviceResponse(['message' => 'Token not created!'], 409);
         }
     }
 }
