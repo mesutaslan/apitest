@@ -18,6 +18,7 @@ $ docker-compose up -d
 
 ```yaml
 Endpoints
+==========
 
    app_league_listteams       GET      ANY      ANY    /api/leagues/{id}/teams
     app_league_deleteleague    DELETE   ANY      ANY    /api/leagues/{id}
