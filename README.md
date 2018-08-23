@@ -6,7 +6,7 @@
 
 This project is restful api example.
 
-Demo : http://commercialpeople.pi2data.com
+Demo : http://apitest.pi2data.com
 
 ## Installation
 
