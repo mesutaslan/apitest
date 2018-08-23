@@ -20,7 +20,7 @@ $ docker-compose up -d
 Endpoints
 ==========
 
-   app_league_listteams       GET      ANY      ANY    /api/leagues/{id}/teams
+    app_league_listteams       GET      ANY      ANY    /api/leagues/{id}/teams
     app_league_deleteleague    DELETE   ANY      ANY    /api/leagues/{id}
     app_team_modifyteam        PUT      ANY      ANY    /api/team/{id}
     app_team_createteam        POST     ANY      ANY    /api/team
